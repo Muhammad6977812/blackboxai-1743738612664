@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-blue-600 text-white shadow-md">
+            <div class="container mx-auto p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-user-graduate text-2xl"></i>
+                    <h1 class="text-xl font-bold">Student Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span id="currentDate" class="text-sm"></span>
+                    <button onclick="logout()" class="text-sm bg-blue-700 hover:bg-blue-800 px-3 py-1 rounded">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <aside class="w-64 bg-white shadow-md">
+                <div class="p-4 flex items-center space-x-3 border-b">
+                    <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                        <i class="fas fa-user text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium" id="studentName">John Doe</h3>
+                        <p class="text-xs text-gray-500">Class: 10A</p>
+                    </div>
+                </div>
+                <nav class="p-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="dashboard.html" class="flex items-center space-x-2 p-2 bg-blue-100 text-blue-700 rounded">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile.html" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="grades.html" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Grades</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="attendance.html" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>Attendance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="fees.html" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Fee Status</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="timetable.html" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Timetable</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <main class="flex-1 p-6">
+                <h2 class="text-2xl font-bold mb-6">Welcome back, <span id="greetingName">John</span>!</h2>
+                
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Current GPA</p>
+                                <h3 class="text-2xl font-bold">3.8</h3>
+                            </div>
+                            <i class="fas fa-star text-3xl text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Attendance</p>
+                                <h3 class="text-2xl font-bold">95%</h3>
+                            </div>
+                            <i class="fas fa-calendar-check text-3xl text-green-500"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-500">Fee Status</p>
+                                <h3 class="text-2xl font-bold">Paid</h3>
+                            </div>
+                            <i class="fas fa-check-circle text-3xl text-blue-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Classes -->
+                <div class="bg-white p-4 rounded-lg shadow mb-6">
+                    <h2 class="text-lg font-semibold mb-4">Upcoming Classes</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 border-b">
+                            <div>
+                                <p class="font-medium">Mathematics</p>
+                                <p class="text-sm text-gray-500">10:00 AM - 11:00 AM</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Room 201</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 border-b">
+                            <div>
+                                <p class="font-medium">Science</p>
+                                <p class="text-sm text-gray-500">11:30 AM - 12:30 PM</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Lab 3</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3">
+                            <div>
+                                <p class="font-medium">English</p>
+                                <p class="text-sm text-gray-500">02:00 PM - 03:00 PM</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Room 105</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Announcements -->
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h2 class="text-lg font-semibold mb-4">Recent Announcements</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-red-100 p-2 rounded-full">
+                                <i class="fas fa-exclamation-circle text-red-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Mid-term exams schedule</p>
+                                <p class="text-sm text-gray-500">The mid-term exams will be held from 15th to 20th November. Check the timetable section for details.</p>
+                                <p class="text-xs text-gray-400 mt-1">Posted 2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-info-circle text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Science fair registration</p>
+                                <p class="text-sm text-gray-500">Registration for the annual science fair is now open. Submit your project proposals by 10th November.</p>
+                                <p class="text-xs text-gray-400 mt-1">Posted 5 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+
+        // Check if user is logged in
+        if(localStorage.getItem('role') !== 'student') {
+            window.location.href = '../../pages/auth/student-login.html';
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('role');
+            window.location.href = '../../pages/auth/student-login.html';
+        }
+
+        // Set greeting based on time of day
+        const hour = new Date().getHours();
+        const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+        document.getElementById('greetingName').textContent = greeting + ', ' + document.getElementById('greetingName').textContent;
+    </script>
+</body>
+</html>
